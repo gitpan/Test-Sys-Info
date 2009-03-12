@@ -1,0 +1,22 @@
+---
+name: Test-Sys-Info
+version: 0.10
+author:
+  - 'Burak Gursoy <burak@cpan.org>'
+abstract: Centralized test suite for Sys::Info.
+license: perl
+resources:
+  license: ~
+requires:
+  Test::More: 0.40
+provides:
+  Test::Sys::Info:
+    file: lib/Test/Sys/Info.pm
+    version: 0.10
+  Test::Sys::Info::Driver:
+    file: lib/Test/Sys/Info/Driver.pm
+    version: 0.10
+generated_by: Module::Build version 0.32
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
