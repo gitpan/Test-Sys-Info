@@ -5,9 +5,11 @@ use Carp qw( croak );
 use Exporter ();
 use Test::More qw( no_plan );
 
-$VERSION = '0.10';
+$VERSION = '0.11';
 @ISA     = qw( Exporter  );
 @EXPORT  = qw( driver_ok );
+
+ok(1, "Workaround EU::MM Bug");
 
 sub driver_ok {
     require_ok("Test::Sys::Info::Driver");

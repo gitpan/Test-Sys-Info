@@ -1,6 +1,6 @@
 ---
 name: Test-Sys-Info
-version: 0.10
+version: 0.11
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: Centralized test suite for Sys::Info.
@@ -12,7 +12,7 @@ requires:
 provides:
   Test::Sys::Info:
     file: lib/Test/Sys/Info.pm
-    version: 0.10
+    version: 0.11
   Test::Sys::Info::Driver:
     file: lib/Test/Sys/Info/Driver.pm
     version: 0.10
