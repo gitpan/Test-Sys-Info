@@ -6,19 +6,19 @@ use Carp qw( croak );
 use constant DRIVER_MODULES => (
     "Sys::Info::OS",
     "Sys::Info::Device",
+    "Sys::Info::Constants",
     "Sys::Info::Driver::%s",
     "Sys::Info::Driver::%s::OS",
     "Sys::Info::Driver::%s::Device",
     "Sys::Info::Driver::%s::Device::CPU",
 );
 
-$VERSION = '0.10';
+$VERSION = '0.12';
 
 sub new {
     my $class = shift;
     my $id    = shift || croak "Driver ID is missing";
     my @suite = map { sprintf $_, $id } DRIVER_MODULES;
-    require Sys::Info::Device;
     foreach my $module ( @suite ) {
         require_ok( $module );
         ok( $module->import || 1, "$module imported" );
@@ -98,8 +98,15 @@ sub test_device_cpu {
 
     $self->just_test_successful_call( $cpu, @methods );
 
+    # TODO: more detailed tests
+
     ok( $cpu->identify, "CPU identified" );
     ok( my @cpu = $cpu->identify, "CPU identified in list context" );
+
+    my $load_00 = $cpu->load(  );
+    my $load_01 = $cpu->load(Sys::Info::Constants->DCPU_LOAD_LAST_01);
+    my $load_05 = $cpu->load(Sys::Info::Constants->DCPU_LOAD_LAST_05);
+    my $load_10 = $cpu->load(Sys::Info::Constants->DCPU_LOAD_LAST_10);
 }
 
 sub just_test_successful_call {
