@@ -5,7 +5,7 @@ use Carp qw( croak );
 use Exporter ();
 use Test::More qw( no_plan );
 
-$VERSION = '0.13';
+$VERSION = '0.14';
 @ISA     = qw( Exporter  );
 @EXPORT  = qw( driver_ok );
 
@@ -32,6 +32,9 @@ Test::Sys::Info - Centralized test suite for Sys::Info.
     driver_ok('Windows'); # or Linux, etc.
 
 =head1 DESCRIPTION
+
+This document describes version C<0.14> of C<Test::Sys::Info>
+released on C<18 April 2009>.
 
 =head1 SEE ALSO
 
