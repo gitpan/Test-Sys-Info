@@ -1,9 +1,0 @@
-#!/usr/bin/perl -w
-use strict;
-use vars qw(%PREREQ %RECOMMEND %BUILDREQ);
-
-%BUILDREQ = (
-   'Test::More' => '0.40',
-);
-
-1;

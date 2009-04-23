@@ -3,18 +3,25 @@ use strict;
 use vars qw( $VERSION @ISA @EXPORT );
 use Carp qw( croak );
 use Exporter ();
-use Test::More qw( no_plan );
+use Test::More;
+use Test::Builder;
 
-$VERSION = '0.14';
+BEGIN {
+    my $test = Test::Builder->new;
+    $test->no_plan if ! $test->has_plan;
+}
+
+$VERSION = '0.15';
 @ISA     = qw( Exporter  );
 @EXPORT  = qw( driver_ok );
-
-ok(1, "Workaround EU::MM Bug");
 
 sub driver_ok {
     require_ok("Test::Sys::Info::Driver");
     Test::Sys::Info::Driver->new( shift )->run;
 }
+
+ok(1, "EU::MM What a dumb module you are")
+    if ! $ENV{HARNESS_ACTIVE};
 
 1;
 
@@ -33,8 +40,16 @@ Test::Sys::Info - Centralized test suite for Sys::Info.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.14> of C<Test::Sys::Info>
-released on C<18 April 2009>.
+This document describes version C<0.15> of C<Test::Sys::Info>
+released on C<23 April 2009>.
+
+This is a centralized test suite for Sys::Info Drivers.
+
+=head1 TESTS
+
+=head2 driver_ok OSID
+
+Tests the driver.
 
 =head1 SEE ALSO
 

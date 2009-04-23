@@ -1,17 +1,18 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 use strict;
-use vars qw(%PREREQ %RECOMMEND %BUILDREQ);
 use ExtUtils::MakeMaker;
+use lib qw( builder );
+use Build::Spec qw( mm_spec );
 
-do 'PREREQ' or die "Error including PREREQ: $!";
+my %spec = mm_spec;
 
 WriteMakefile(
-   'NAME'         => 'Test::Sys::Info',
-   'VERSION_FROM' => 'lib/Test/Sys/Info.pm',
-   'PREREQ_PM'    => { %PREREQ, %BUILDREQ },
-   ($] >= 5.005 ? (
-   AUTHOR   => 'Burak Gursoy <burak@cpan.org>',
-   ABSTRACT => 'Centralized test suite for Sys::Info',
-   ) : ()),
-   PL_FILES => {},
+    NAME         => $spec{module_name},
+    VERSION_FROM => $spec{VERSION_FROM},
+    PREREQ_PM    => $spec{PREREQ_PM},
+    PL_FILES     => {},
+    ($] >= 5.005 ? (
+    AUTHOR       => $spec{dist_author},
+    ABSTRACT     => $spec{ABSTRACT},
+    ) : ()),
 );
