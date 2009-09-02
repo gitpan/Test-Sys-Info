@@ -11,7 +11,7 @@ BEGIN {
     $test->no_plan if ! $test->has_plan;
 }
 
-$VERSION = '0.16';
+$VERSION = '0.17';
 @ISA     = qw( Exporter  );
 @EXPORT  = qw( driver_ok );
 
@@ -40,7 +40,7 @@ Test::Sys::Info - Centralized test suite for Sys::Info.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.16> of C<Test::Sys::Info>
+This document describes version C<0.17> of C<Test::Sys::Info>
 released on C<3 September 2009>.
 
 This is a centralized test suite for Sys::Info Drivers.

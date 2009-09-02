@@ -13,7 +13,7 @@ use constant DRIVER_MODULES => (
     "Sys::Info::Driver::%s::Device::CPU",
 );
 
-$VERSION = '0.16';
+$VERSION = '0.17';
 
 sub new {
     my $class = shift;
@@ -143,7 +143,7 @@ Test::Sys::Info::Driver - Tests Sys::Info driver integrity.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.16> of C<Test::Sys::Info::Driver>
+This document describes version C<0.17> of C<Test::Sys::Info::Driver>
 released on C<3 September 2009>.
 
 Can not be used directly. See L<Test::Sys::Info> for more information.
