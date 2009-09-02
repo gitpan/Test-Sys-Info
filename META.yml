@@ -1,6 +1,6 @@
 ---
 name: Test-Sys-Info
-version: 0.15
+version: 0.16
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: Centralized test suite for Sys::Info.
@@ -10,19 +10,21 @@ resources:
   repository: http://bitbucket.org/burak/cpan-test-sys-info/
 build_requires:
   Test::More: 0.40
+configure_requires:
+  Module::Build: 0.35
 provides:
   Test::Sys::Info:
     file: lib/Test/Sys/Info.pm
-    version: 0.15
+    version: 0.16
   Test::Sys::Info::Driver:
     file: lib/Test/Sys/Info/Driver.pm
-    version: 0.15
+    version: 0.16
 no_index:
   directory:
     - monolithic_version
     - builder
     - t
-generated_by: Module::Build version 0.32
+generated_by: Module::Build version 0.35
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

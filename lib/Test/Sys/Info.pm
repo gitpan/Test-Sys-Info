@@ -11,7 +11,7 @@ BEGIN {
     $test->no_plan if ! $test->has_plan;
 }
 
-$VERSION = '0.15';
+$VERSION = '0.16';
 @ISA     = qw( Exporter  );
 @EXPORT  = qw( driver_ok );
 
@@ -40,8 +40,8 @@ Test::Sys::Info - Centralized test suite for Sys::Info.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.15> of C<Test::Sys::Info>
-released on C<23 April 2009>.
+This document describes version C<0.16> of C<Test::Sys::Info>
+released on C<3 September 2009>.
 
 This is a centralized test suite for Sys::Info Drivers.
 
@@ -57,11 +57,11 @@ L<Sys::Info>.
 
 =head1 AUTHOR
 
-Burak Gürsoy, E<lt>burakE<64>cpan.orgE<gt>
+Burak Gursoy <burak@cpan.org>.
 
 =head1 COPYRIGHT
 
-Copyright 2009 Burak Gürsoy. All rights reserved.
+Copyright 2009 Burak Gursoy. All rights reserved.
 
 =head1 LICENSE
 
