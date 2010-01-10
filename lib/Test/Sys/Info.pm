@@ -1,8 +1,9 @@
 package Test::Sys::Info;
 use strict;
+use warnings;
 use vars qw( $VERSION @ISA @EXPORT );
 use Carp qw( croak );
-use Exporter ();
+use base qw( Exporter );
 use Test::More;
 use Test::Builder;
 
@@ -11,16 +12,15 @@ BEGIN {
     $test->no_plan if ! $test->has_plan;
 }
 
-$VERSION = '0.17';
-@ISA     = qw( Exporter  );
+$VERSION = '0.20';
 @EXPORT  = qw( driver_ok );
 
 sub driver_ok {
-    require_ok("Test::Sys::Info::Driver");
-    Test::Sys::Info::Driver->new( shift )->run;
+    require_ok('Test::Sys::Info::Driver');
+    return Test::Sys::Info::Driver->new( shift )->run;
 }
 
-ok(1, "EU::MM What a dumb module you are")
+ok(1, 'EU::MM What a dumb module you are')
     if ! $ENV{HARNESS_ACTIVE};
 
 1;
@@ -40,8 +40,8 @@ Test::Sys::Info - Centralized test suite for Sys::Info.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.17> of C<Test::Sys::Info>
-released on C<3 September 2009>.
+This document describes version C<0.20> of C<Test::Sys::Info>
+released on C<10 January 2010>.
 
 This is a centralized test suite for Sys::Info Drivers.
 
@@ -61,12 +61,12 @@ Burak Gursoy <burak@cpan.org>.
 
 =head1 COPYRIGHT
 
-Copyright 2009 Burak Gursoy. All rights reserved.
+Copyright 2009 - 2010 Burak Gursoy. All rights reserved.
 
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify 
-it under the same terms as Perl itself, either Perl version 5.10.0 or, 
+it under the same terms as Perl itself, either Perl version 5.10.1 or, 
 at your option, any later version of Perl 5 you may have available.
 
 =cut

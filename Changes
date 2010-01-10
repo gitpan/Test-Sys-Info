@@ -2,6 +2,9 @@ Revision history for Perl extension Test::Sys::Info.
 
 Time zone is GMT+2.
 
+0.20 Wed Dec  2 05:59:43 2009
+    => perlcritic refactoring.
+
 0.17 Thu Sep  3 02:31:42 2009
     => Some problem with PAUSE. RE-releasing 0.16.
 
